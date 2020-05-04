@@ -1,0 +1,34 @@
+<!--Testimonial edit-->
+<% include ../partials/header %>
+<!--end of jumbotron-->
+<!--</header>-->
+
+    <div class="row">
+    
+        <h2 style= "text-align:center;">Edit Testimonial</h2>
+        <hr>
+        
+        
+        <!--submission will add to image page-->
+        <!--margin: top/bottom left/right-->
+        <div style="width: 30%; margin:25px auto">
+            <!--take action after /image/.id/comments-->
+            <form action="/testimonials/<%= testimonial._id%>?_method=PUT" method="POST">
+                <!--name will be used to grab a data inside the route from the request body-->
+                <!--form-group creates a gap between lines-->
+                <div class="form-group">
+                    <label>Testimonial</label>
+                    <textarea class="form-control" type = "text" rows = "10" name = "testimonial[testimonial]"><%= testimonial.testimonial %></textarea> 
+                </div>
+                <!--btn-block: takes up the entire line-->
+                <!--btn-primary makes button blue-->
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+                </div>
+            </form>
+            <a href="/testimonials">Go back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

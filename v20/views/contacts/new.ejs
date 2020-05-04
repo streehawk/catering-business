@@ -1,0 +1,47 @@
+<!--contact new-->
+<% include ../partials/header %>
+<!--end of jumbotron-->
+</header>
+<div class="row">
+
+    <h2 style= "text-align:center;">Add new Contact</h2>
+    <hr>
+    
+    
+    <!--submission will add to image page-->
+    <!--margin: top/bottom left/right-->
+    <div style="width: 30%; margin:25px auto">
+        <form action="/contacts" method="post" enctype="multipart/form-data">
+            <!--name will be used to grab a data inside the route from the request body-->
+            <!--form-group creates a gap between lines-->
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type = "text" name = "contact[name]" placeholder="name"> 
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input class="form-control" type = "text" name = "contact[phoneNumber]" placeholder="Phone number">
+            </div>
+            <div class="form-group">
+                <label>Office Hours</label>
+                <input class="form-control" type = "text" name = "contact[hours]" placeholder="office hours">
+            </div> 
+            <div class="form-group">
+                <label>Email Address</label>
+                <input class="form-control" type = "email" name = "contact[email]" placeholder="email">
+            </div>
+            <div class="form-group">
+                <label>Upload image</label>
+                <input type="file" name="image" accept="image/*">
+            </div>
+            <!--btn-block: takes up the entire line-->
+            <!--btn-primary makes button blue-->
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+            </div>
+        </form>
+        <a href="/contacts">Go back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

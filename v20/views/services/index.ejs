@@ -1,0 +1,35 @@
+<!--Service Index-->
+<% include ../partials/header %>
+<div class= "container">
+    <div class = "text-center">
+        <h2>SERVICES</h2>
+        <hr>
+   </div>
+   <% if(currentUser && currentUser.isAdmin){  %>  %>
+        <a class = "btn btn-primary btn-large" href = "/services/new">Add new Service</a>
+    <% } %>
+</div>
+
+<div class = "container">
+    <div class="col-md-12" align="center">
+        <div class="content" class="jumbotron">
+            <div class = "row text-center">
+                 <% services.forEach(function(service){ %>
+                 <div class="post">
+                     <h2 class="heading"> <%= service.service %> </h2>
+                     <p> <%- service.desc.toString().substring(0,250) %> </p>
+                     <a href ="/services/<%=service._id%>">Read more</a>
+                 </div>
+                 <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    
+<% include ../partials/footer %>

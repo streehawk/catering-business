@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+<div class= "row">
+    <div class= "col-md-4">
+        <h1><%=user.firstName + " " + user.lastName%></h1>
+        <div class = "thumbnail">
+            <img src="<%= user.avatar %>" alt="user profile image">
+            <div class="caption"><a href="mailto:<%=user.email%>"><%=user.email%></a></div>
+        </div>
+        g of the next paragraph. An initial is an oversized capital letter, 
+        sometimes outdented beyond the margin of the text. This style can be seen, 
+        for example, in the original Old English manuscript of Beowulf. Outdenting is still used 
+        in English typography, though not commonly.[3] Modern Eng
+    </div>
+    <div class="col-md-8">
+        <h3><%=user.username%>'s images</h3>:
+        <ul>
+            <% images.forEach(function(image){%>
+                <li><a href="/images/<%= image.id%>"><%= image.name%></a></li>
+            <%  }); %>
+      </ul>
+    </div>
+</div>
+
+<% include ../partials/footer %>

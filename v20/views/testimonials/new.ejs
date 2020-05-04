@@ -1,0 +1,28 @@
+<!--Testimonial new-->
+<% include ../partials/header %>
+
+<div class="row">
+    
+    <h2 style= "text-align:center;">Add New Testimonial</h2>
+
+    
+    <!--submission will add to service page-->
+    <!--margin: top/bottom left/right-->
+    <div style="width: 30%; margin:25px auto">
+        <form action="/testimonials" method="post">
+            <!--name will be used to grab a data inside the route from the request body-->
+            <!--form-group creates a gap between lines-->
+            <div class="form-group">
+                <textarea class="form-control" type = "text" rows = "10" name = "testimonial[testimonial]" placeholder="add your testimonial"></textarea>
+            </div> 
+            <!--btn-block: takes up the entire line-->
+            <!--btn-primary makes button blue-->
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+            </div>
+        </form>
+        <a href="/testimonials">Go back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

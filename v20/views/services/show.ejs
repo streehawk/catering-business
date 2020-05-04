@@ -1,0 +1,24 @@
+<!--Service's show-->
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="rows">
+        <div class = "text-center">
+            <div class="post">
+                 <h1> <%= service.service %> </h1>
+                <!--'-' intead of '=' user can write hmp -->
+                 <p> <%- service.desc %> </p>
+                 <% if(currentUser && currentUser.isAdmin){  %>
+                    <a class="btn btn-xs btn-warning" href="/services/<%=service._id %>/edit">Edit</a>
+                    <form id= "delete-form" action ="/services/<%= service._id %>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-xs btn-danger" value="Delete"> 
+                    </form>
+                <% } %> 
+            </div>
+        
+        </div>
+    <a href="/services">Go back</a>
+    </div>
+</div>
+
+<%include ../partials/footer %>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Think Inside The Bun</title>
+        <script
+            src="https://code.jquery.com/jquery-3.4.0.js"
+            integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+            crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bower_components/css/bootstrap.css">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/gallary.css">
+              <!-- For Icons -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	    <!-- For Text Format -->
+	    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Noto+Serif" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+        
+    </head>
+    <body>
+        <div class = "gradient">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-demo" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				     </button>
+                    <a class = "navbar-brand" href="/"><i class="fas fa-glass-cheers"></i> Andre's Catering </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-navbar-demo">
+                    <span class="select">
+                    <div class="nav navbar-nav" >
+						<li id="home" class="hov"><a href="/">Home</a></li>
+						<li id="about" class="hov"><a href="/abouts">About</a></li>
+					</div>
+					<!--nav bar on a top right side of the page -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hov" id="contact"><a href="/contacts"><i class="fas fa-phone-square"></i> Contact</a></li>
+                        <% if(!currentUser){ %>
+                            <li class="hov"><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                            <li class="hov"><a href="/register"><i class="fas fa-user-plus"></i> Register</a></li>
+                        <% }else{ %>
+                            <li> <a href="#">Hello <%= currentUser.username %></a></li>
+                            <li class="hov"><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+        <div class= container>
+            <div id="content" class="jumbotron">
+            <h1 class="heading content"><i class="fas fa-hamburger"></i></i>Think Inside The Bun<i class="fas fa-hamburger"></i></i></h1>			<p> Licking fingers will become irresistable</p> 
+			<hr>
+			<p id="bookButton"> <a href="/bookings" class="btn btn-primary"><i class="fas fa-utensils"></i> Book Now</a></p>
+
+			<!-- TODO: create a hamburger manu when it hits the small screen-->
+
+			<!-- hide the manu when screen hit the mobile size -->
+			<div class="collapse navbar-collapse" id="jambotron-navbar">
+				<nav>
+					<div class="stripe">						
+							<!-- two classes: mode and selected  -->
+							<a class="mode selected btn btn-info" href="/">Home</a>
+							<span id="gap"></span>
+							<a class="mode btn btn-info" href="/services">Services</a>	
+							<a id="gallaryOption" class = "btn btn-info" href="/images">Gallery</a>
+							<a class = "btn btn-info" href= "/testimonials">Testimonials</a>
+							<a class = "btn btn-info" href="/contacts">Contact</a>					
+					</div>
+				</nav>
+			</div>
+
+		</div>
+            <!--if there is only error then it will be visible most of the time. It will show when there is smt in the array-->
+        <% if(error && error.length > 0) {%>
+            <div class="alert alert-danger" role="alert">
+                <!--'error' declared in app.js as res.locals.error  = req.flash("error");-->
+                <%= error %>
+            </div>
+        <% }  %>
+        <% if(success && success.length > 0) {%>
+            <div class="alert alert-success" role="alert">
+                <!--'error' declared in app.js as res.locals.error  = req.flash("error");-->
+                <%= success %>
+            </div>
+        <% }  %>
+    </div>
+    <div class="container">
+        
+        <!--<div class="container">   -->
+        <!--    <header class = "jumbotron">-->
+        <!--        <div class = "container">-->
+        <!--            <h1> Think Inside The Bun </h1>-->
+        <!--            <p>Licking fingers will become irresistable</p>-->
+        
+    

@@ -1,0 +1,26 @@
+<% include partials/header %>
+<!--/header to get out of jumbotron in header file-->
+<!--</header>-->
+<!--<div class="container">-->
+<div class = "row">
+    <h1 style="text-align: center"> Login </h1>
+    <hr>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/login" method="POST">
+            <div class = form-group>
+                <label>Username</label>
+                <input class = "form-control" type="text" name = "username" placeholder="username" autofocus>
+            </div>
+            <div class = form-group>
+                <label>Password</label>
+                <input class="form-control" type="password" name = "password" placeholder="password">
+            </div>
+            <div class="form-group">
+                <button>LOGIN</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--</div>-->
+
+<% include partials/footer %>

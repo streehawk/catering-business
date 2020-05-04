@@ -1,0 +1,32 @@
+<!--Comment edit-->
+<% include ../partials/header %>
+<!--end of jumbotron-->
+<!--</header>-->
+<div class = "container">
+    <div class="row">
+    
+        <h1 style= "text-align:center;">Edit Comment</h1>
+        
+        
+        <!--submission will add to image page-->
+        <!--margin: top/bottom left/right-->
+        <div style="width: 30%; margin:25px auto">
+            <!--take action after /image/.id/comments-->
+            <form action="/images/<%= image_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                <!--name will be used to grab a data inside the route from the request body-->
+                <!--form-group creates a gap between lines-->
+                <div class="form-group">
+                    <input class="form-control" type = "text" name = "comment[text]" value="<%= comment.text %>"> 
+                </div>
+                <!--btn-block: takes up the entire line-->
+                <!--btn-primary makes button blue-->
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+                </div>
+            </form>
+            <a href="/images">Go back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

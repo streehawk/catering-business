@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+<!--end of jumbotron-->
+<!--</header>-->
+<div class="row">
+
+    
+    
+    <!--submission will add to image page-->
+    <!--margin: top/bottom left/right-->
+    <div style="width: 30%; margin:25px auto">
+        <form action="/images/<%=image._id%>?_method=PUT" method="post">
+            <!--name will be used to grab a data inside the route from the request body-->
+            <!--form-group creates a gap between lines-->
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type = "text" name = "image[name]" value= <%= image.name%> > 
+            </div>
+            <div class="form-group">
+                <label>Ingredient</label>
+                <input class="form-control" type = "text" name = "image[ingredient]" value= <%= image.ingredient%>>
+            </div> 
+            
+            <!--btn-block: takes up the entire line-->
+            <!--btn-primary makes button blue-->
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block"> Submit </button>
+            </div>
+        </form>
+        <a href="/images">Go back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

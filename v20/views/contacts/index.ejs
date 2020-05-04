@@ -1,0 +1,42 @@
+<!--Contact index-->
+<% include ../partials/header %>
+<div class="container">
+ 	<div class="row">
+ 		<div class="col-lg-12">
+ 			<div class="content">
+ 			    <div class ="text-center">
+                    <h2 >Contact Us</h2>
+                </div>
+                <hr>
+                <% if(currentUser && currentUser.isAdmin){  %>
+                    <a class = "btn btn-primary btn-large" href = "/contacts/new">Add new Contact</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <% contacts.forEach(function(contact){ %>
+            <div class="col-md-4 picPost">
+                <div class="thumbnail">
+                    <img style="max-height: 350px;"  src="<%= contact.image %>">
+                </div>
+            </div>
+            <div class="col-md-8 post">
+                <p><strong>Name: </strong><%=contact.name%></p>
+                <p><strong>Phone: </strong><%=contact.phoneNumber%></p>
+                <p><strong>Office hours: </strong><%=contact.hours%></p>
+                <p><strong>email: </strong><%=contact.email%></p>
+                <p><%=contact.description%></p>
+                <% if(currentUser && currentUser.isAdmin){  %>
+                <a class="btn btn-xs btn-warning" href="/contacts/<%=contact._id %>/edit">Edit</a>
+                <form id="delete-form" action="/contacts/<%= contact._id%>?_method=DELETE" method="POST">
+                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                </form>
+                <% } %>
+            </div>
+        
+    </div>
+    <% }); %>
+</div>
+    
+<% include ../partials/footer %>

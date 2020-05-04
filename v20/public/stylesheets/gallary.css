@@ -1,0 +1,351 @@
+body{
+	padding-top: 70px;
+/*	background: #EF3B36;  /* fallback for old browsers 
+	background: -webkit-linear-gradient(to right, #FFFFFF, #EF3B36);  /* Chrome 10-25, Safari 5.1-6 
+	background: linear-gradient(to right, #FFFFFF, #EF3B36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+
+}
+/*.gradiants{*/
+	
+/*}*/
+
+/*.selected{*/
+	/*opacity: .5;*/
+/*}*/
+
+.jumbotron{
+	color: #2c3e50;
+	/*color: #f44242;*/
+	/*background: #ecf0f1;*/
+	/*text-transform: uppercase;*/
+	font-family: Bitter;
+	background: #C6FFDD;  
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+h1{
+	background-blend-mode: soft-light;
+	/*background-color: white;*/
+	font-weight: 700;
+	font-size: 5em;
+	backface-visibility: hidden;
+	
+	/*background-size: 10px;*/
+}
+hr{
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+
+#content{
+	text-align: center;
+	/*background: url(https://images.unsplash.com/photo-1532597540419-b176991847e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);*/
+	background-size: cover;	
+	background-position: center;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#bookButton{
+	color: #dce5f4;
+	outline: none;
+}
+
+.btn-primary {
+}
+
+.navbar-inverse{
+	/*background: #2c3e50;*/
+	background: #f44242;
+}
+
+/*Select specific class line by inspecting to change the color. */
+.navbar-inverse .navbar-brand {
+    color: white;
+    font-family: Merriweather;
+}
+
+/*Select specific class line by inspecting to change the color. */
+.navbar-inverse .navbar-nav > li > a{
+	color: white;
+	font-family: Merriweather;
+}
+
+/*stripe on jambotron for home button*/
+.stripe{
+	/*background: gray;*/
+	height: 50px;
+	text-align: center;
+	padding-bottom: 0%;
+	font-family: "Montserrat", "Avenir";
+	font-weight: bold;
+	text-transform: uppercase;
+	
+}
+
+
+button{
+	border: none;
+	background: none;
+	height: 100%;
+	font-weight: 500;
+	font-size: 25px;
+	color: steelblue;
+	letter-spacing: 1.2px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.1),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+     text-transform: uppercase;
+	/*transition: how long should hover to take;*/
+	transition: all .3s; 
+	/*to support all the web browser */	
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	/*get rid of annoying outline when user selects */
+	outline: none;
+}
+
+button:hover {
+	color: black;
+	background: #f44242 ;
+
+}
+
+/*create a gap between home button and rest*/
+#gap{
+	display: inline-block;
+	width: 4%;
+}
+.pictures{
+	display: none;
+}
+
+
+.btn-info{
+	border: none;
+	background: none;
+	height: 100%;
+	font-weight: bold;
+	font-size: 25px;
+	color: #FF6666;
+	letter-spacing: 1.2px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.1),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+	transition: how long should hover to take;
+	transition: all .3s; 
+	/*to support all the web browser */
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	/*get rid of annoying outline when user selects */
+	outline: none;
+
+}
+
+.btn-info:hover {
+	color: black;
+	background: #f44242 ;
+	opacity: 0.3;
+}
+
+.square{
+	/*border: 15px solid #f4418c;*/
+	width: 100%;
+	background-color: rgb(255,0,0,0.2);
+	padding-bottom: 3%;
+	float: left;
+	margin: 1.66%;
+	/*create curve on the edges and 50% makes circles */
+	border-radius: 15%;
+	transition: all .3s;
+	/*transition: background .6s;*/
+	/*to support all the web browser */	
+	-webkit-transition:background 0.3s;
+	-moz-transition:background 0.3s;
+
+}
+
+
+
+img{
+    /*max-width:250px;*/
+    /*max-height:250px;*/
+    border: 1px solid #ddd; /* Gray border */
+  	border-radius: 4px;  /* Rounded border */
+  	padding: 5px; /* Some padding */
+  	width: 150px; /* Set a small width */
+}
+
+ul{
+	list-style: none;
+}
+
+.post{
+	
+	width: 80%;
+  	border: 10px solid #bdc3c7;
+  	font-family: 'Source Sans Pro', sans-serif;
+  	padding: 20px;
+  	margin: 20px auto;
+  	max-width: 700px;
+  	margin-bottom: 20px;
+  	border-style: outset;
+}
+.picPost{
+	margin-top: 20px;
+}
+.quoteName{
+	font-size:1rem;
+  	font-weight: bold;
+  	color: #2c3e50;
+}
+.heading{
+	font-family: 'Lora', serif;
+	color: rgba(23, 23, 23, 0.5);
+	
+}
+#landing-header h1{
+	color: rgba(206, 62, 62, 0.82);
+	
+}
+.jumbotron .h1, .jumbotron h1{
+	color: rgba(206, 62, 62, 0.82);
+}
+p{
+	font-family: 'Noto' , serif;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.clickme{
+	border: none;
+	background: none;
+	height: 100%;
+	font-weight: 500;
+	font-size: 25px;
+	color: steelblue;
+	letter-spacing: 1.2px;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.1),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+     text-transform: uppercase;
+	/*transition: how long should hover to take;*/
+	transition: all .3s; 
+	/*to support all the web browser */	
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	/*get rid of annoying outline when user selects */
+	outline: none;
+}
+
+.tit{
+	color: #2c3e50;
+	/*color: #f44242;*/
+	/*background: #ecf0f1;*/
+	/*text-transform: uppercase;*/
+	font-family: Bitter;
+	background: #C6FFDD;  
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	
+}
+
+.foot{
+	height:100px;
+	bottom: 20%;
+	margin-top: 50px;
+}
+
+.thumbnail{
+	max-height:"304";
+	max-width:"236";
+}
+
+/*.btn-info{*/
+	/*position: absolute;*/
+/*	top: 50%;*/
+/*	left: 50%;*/
+/*	transform: translate(-50%, -50%);*/
+/*}*/
+
+/*#bookButton{*/
+/*	background: none;*/
+/*	color: #ccc;*/
+/*	width: 240px;*/
+/*	height: 80px;*/
+/*	border: none;*/
+/*	font-size: 18px;*/
+/*	border-radius: 4px;*/
+/*	transition: .6s;*/
+/*	overflow: hidden;*/
+/*}*/
+
+/*#bookButton:focus {*/
+/*	outline: none;*/
+	
+/*}*/
+
+/*#bookButton:before {*/
+/*	content: '';*/
+/*	display: block;*/
+/*	position: absolute;*/
+/*	background: rgba(255,255,255,.5);*/
+/*	width: 60px;*/
+/*	height:100%;*/
+/*	left: 0;*/
+/*	top: 0;*/
+/*	opacity: .5s;*/
+/*	filter: blur(30px);*/
+/*	transform: translateX(-130px) skewX(-15deg);*/
+	
+	
+/*}*/
+
+/*#bookButton:after {*/
+/*	content: '';*/
+/*	display: block;*/
+/*	position: absolute;*/
+/*	background: rgba(255,255,255, .2);*/
+/*	width: 30px;*/
+/*	height: 100%;*/
+/*	left: 30px;*/
+/*	top: 0;*/
+/*	opacity: 0;*/
+/*	filter: blur(30px);*/
+/*	transform: translate(-100px) scaleX(-15deg);*/
+/*}*/
+
+/*#bookButton:hover {*/
+/*	background: #338033;*/
+/*	cursor: pointer;*/
+	
+/*}*/
+
+/*#bookButton:hover:before {*/
+/*	transform: translateX(300px) skewX(-15deg);*/
+/*	opacity: 1;*/
+/*	transition:.7s;*/
+/*}*/
+
+.hov:hover {
+	opacity: 0.3;
+	
+}

@@ -1,0 +1,41 @@
+<!--//locations index-->
+<% include ../partials/header %>
+
+<div class= "container"> 
+    <a class = "btn btn-primary btn-large" href = "/locations/new">New location</a>
+    
+    <div class="col-md-3">
+        <div id="map"></div>
+    </div>
+</div>
+
+<script>
+  function initMap() {
+    var lat = <%= location.lat %>;
+    var lng = <%= location.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= location.name %><br/>
+      <%= location.location %></strong>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQmrJ_ivzIOPWIWq1IZVuF4ZptwEoXI7Q&callback=initMap"></script>
+
+
+<% include ../partials/footer %>

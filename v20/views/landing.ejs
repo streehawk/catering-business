@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Think Inside The Bun</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/gallary.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Noto+Serif" rel="stylesheet">
+              <!-- For Icons -->
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	    <!-- For Text Format -->
+	    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+    
+    
+    
+    <div id="landing-header">
+        <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-demo" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				     </button>
+                    <a class = "navbar-brand" href="/"><i class="fas fa-glass-cheers"></i> Andre's Catering </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-navbar-demo">
+                    <span class="select">
+                    <div class="nav navbar-nav" >
+						<li class="hov" id="home"><a href="/">Home</a></li>
+						<li class="hov" id="about"><a href="/abouts">About</a></li>
+					</div>
+					<!--nav bar on a top right side of the page -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hov" id="contact"><a href="/contacts"><i class="fas fa-phone-square"></i> Contact</a></li>
+                        <% if(!currentUser){ %>
+                            <li class="hov"><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                            <li class="hov"><a href="/register"><i class="fas fa-user-plus"></i> Register</a></li>
+                        <% }else{ %>
+                            <li class="hov"> <a href="#">Hello <%= currentUser.username %></a></li>
+                            <li class="hov"><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="content">
+     		<h1 class="heading content"><i class="fas fa-hamburger"></i></i>Think Inside The Bun<i class="fas fa-hamburger"></i></i></h1>
+     		<hr>
+    		<p id="bookButton"> <a href="/bookings" class="btn btn-primary"><i class="fas fa-utensils"></i> Book Now</a></p>
+		</div>
+		<div class="collapse navbar-collapse" id="jambotron-navbar">
+				<nav>
+					<div class="stripe">						
+							<!-- two classes: mode and selected  -->
+							<a class="mode selected btn btn-info" >Home</a>
+							<span id="gap"></span>
+							<a class="mode btn btn-info" href="/services">Services</a>	
+							<a id="gallaryOption" class = "btn btn-info" href="/images">Gallery</a>
+							<a class = "btn btn-info" href= "/testimonials">Testimonials</a>
+							<a class = "btn btn-info" href="/contacts">Contact</a>					
+					</div>
+				</nav>
+			</div>
+			</div>
+    </div>
+    
+        
+    
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+

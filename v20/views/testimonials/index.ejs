@@ -1,0 +1,37 @@
+<!--Testimonial index-->
+<% include ../partials/header %>
+<div class="container">
+ 	<div class="row">
+ 		<div class="col-md-12">
+ 			<div class="content">
+ 			    <div class ="text-center">
+                    <h2 >Testimonials</h2>
+                </div>
+                <hr>
+                <% if(currentUser){  %>
+                    <a class = "btn btn-primary btn-large" href = "/testimonials/new">Add new Testimonial</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "container">
+    
+         <% testimonials.forEach(function(testimonial){ %>
+         <div class="post">
+             <h1 class="quoteName"><i class="fas fa-quote-left "></i> <%= testimonial.author.username %> </h1>
+             <div class = "row text-center">
+                 <p> <%= testimonial.testimonial %> </p>
+                 <% if(currentUser && currentUser.isAdmin){  %>
+                     <a class="btn btn-xs btn-warning" href="/testimonials/<%=testimonial._id %>/edit">Edit</a>
+                    <form id= "delete-form" action ="/testimonials/<%= testimonial._id %>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn btn-xs btn-danger" value="Delete"> 
+                    </form>
+            <% } %>
+         </div>
+        </div>
+    <% }); %>
+</div> 
+
+    
+<% include ../partials/footer %>

@@ -1,0 +1,56 @@
+<!--booking index-->
+<% include ../partials/header %>
+
+
+			<div class="contaner row">
+				<div class="text-center">
+        			<h2>Booking</h2>
+    				<hr>
+				</div>
+			    <form action="/bookings" method="post">
+	    		    <div class="col">
+    	    			<label>Name*</label>
+    	      			<input type="text" class="form-control" name="booking[name]" placeholder="Name" autofocus>
+    	    		</div>
+    	    		<div class="col">
+    	    			<label>Event Date*</label>
+    	      			<input type="date" class="form-control" name="booking[eventDate]" value="2019-04-15" min="2019-04-15" max="2020-12-31">
+    	    		</div>
+    	    		<div class="col">
+    	    			<label>Phone Number*</label>
+    	      			<input type="tel" class="form-control text-muted" name="booking[phone]" required><span class="form-text text-muted">Format: 1234567890</span>
+    	    		</div>
+    	    		
+    	    		<div class="col">
+    	    			<label>Event Address*</label>
+    	      			<input type="text" class="form-control text-muted" name="booking[eventAddress]" required>
+    	    		</div>
+    	    		<div class="col">
+    	    			<label>Service*</label>
+    	      			<input type="text" class="form-control text-muted" name="booking[service]" required>
+    	    		</div>
+    	    		<div class="col">
+    	    			<label>Meat*</label>
+    	      			<input type="text" class="form-control text-muted" name="booking[meat]" required>
+    	    		</div>
+    	    		<div class="col">
+    	    			<label>Sides</label>
+    	      			<input type="text" class="form-control text-muted" name="booking[sides]">
+    	    		</div>
+    	  		<!-- </div> -->
+    	  		<div class="form-group">
+    			    <label for="exampleInputEmail1">Email address*</label>
+    			    <input type="email" class="form-control" id="exampleInputEmail1" name="booking[email]" aria-describedby="emailHelp" placeholder="Enter email">
+    			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    		    </div>
+    		    <div class="form-group col-md-4">
+    		      <label for="inputZip">Number of attendees*</label>
+    		      <input type="text" class="form-control" name="booking[attendees]" required>
+    		    </div>
+    		  </div>
+    		  <button type="submit" class="btn btn-primary">Submit</button>
+    		 </form>
+    	</div>
+	
+
+<% include ../partials/footer %>
